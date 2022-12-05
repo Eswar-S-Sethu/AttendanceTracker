@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.09" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/name"
         android:layout_width="369dp"
         android:layout_height="69dp"
         android:ems="10"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.202" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/noofsubs"
         android:layout_width="369dp"
         android:layout_height="69dp"
         android:ems="10"
@@ -55,7 +55,7 @@
         app:layout_constraintVertical_bias="0.453" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/nextbtn"
         android:layout_width="129dp"
         android:layout_height="67dp"
         android:layout_marginStart="141dp"
@@ -68,6 +68,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/noofsubs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
