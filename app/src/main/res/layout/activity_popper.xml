@@ -2,59 +2,49 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="350dp"
-    android:layout_height="150dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".popper">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="185dp"
-        android:layout_height="32dp"
-        android:text="SUBJECT"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="414dp"
+        android:layout_height="111dp"
+        android:layout_marginBottom="620dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="61dp"
-        android:layout_height="60dp"
-        android:text="XX %"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="234dp"
+            android:layout_height="31dp"
+            android:text="SUBJECT"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="16dp" />
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="67dp"
-        android:layout_height="43dp"
-        android:text="P"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="67dp"
+            android:layout_height="43dp"
+            android:text="P"
+            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteY="52dp" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="66dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="10dp"
-        android:text="A"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="61dp"
+            android:layout_height="60dp"
+            android:text="XX %"
+            tools:layout_editor_absoluteX="318dp"
+            tools:layout_editor_absoluteY="27dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="66dp"
+            android:layout_height="45dp"
+            android:text="A"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="52dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
