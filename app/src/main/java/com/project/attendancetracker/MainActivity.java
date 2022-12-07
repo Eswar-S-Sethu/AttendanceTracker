@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText nametxt,number_of_subjects;
     Button nextbtn;
-    int subs;
+    String subs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Type in all the subjects",Toast.LENGTH_LONG).show();
-                subs=Integer.parseInt(number_of_subjects.getText().toString());
+                subs=number_of_subjects.getText().toString();
                 showlistview();
             }
         });
     }
 
     public void showlistview(){
-        Intent intent=new Intent(getApplicationContext(),subjectEnter.class);
+        Intent intent=new Intent(getApplicationContext(),ShowListItems.class);
         intent.putExtra("numberOfSubs",subs);
         startActivity(intent);
     }
