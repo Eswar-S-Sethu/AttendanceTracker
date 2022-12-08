@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showlistview(){
-        Intent intent=new Intent(getApplicationContext(),ShowListItems.class);
-        intent.putExtra("numberOfSubs",subs);
+        Intent intent=new Intent(this,AddSubjects.class);
+        intent.putExtra("subjectsCount",subs);
         startActivity(intent);
     }
 }

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AttendanceTracker"
         tools:targetApi="31">
         <activity
-            android:name=".ShowListItems"
+            android:name=".AddSubjects"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -21,20 +21,6 @@
         </activity>
         <activity
             android:name=".ShowSummaryActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".popper"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".AllSet"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
