@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Type in all the subjects",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Add each subject",Toast.LENGTH_LONG).show();
                 subs=number_of_subjects.getText().toString();
                 showlistview();
             }
