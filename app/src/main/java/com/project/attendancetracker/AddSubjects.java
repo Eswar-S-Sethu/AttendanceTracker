@@ -56,19 +56,22 @@ public class AddSubjects extends AppCompatActivity {
         if(subjectsAdded>arraylistCapacity){
             Toast.makeText(getApplicationContext(),"You have added all subjects",Toast.LENGTH_LONG).show();
         }
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Add subject");
+        else{
+            final AlertDialog.Builder alert=new AlertDialog.Builder(AddSubjects.this);
+            View mview=getLayoutInflater().inflate(R.layout.custom_dialogbox,null);
+            final EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
+            alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    addDataToArrayList(txt_input.getText().toString());
+                }
+            });
+            alert.setView(mview);
+            final AlertDialog alertDialog=alert.create();
+            alertDialog.setCanceledOnTouchOutside(true);
+            alertDialog.show();
+        }
 
-        final View customLayout=getLayoutInflater().inflate(R.layout.custom_dialogbox,null);
-        builder.setView(customLayout);
-
-        builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                EditText editText=customLayout.findViewById(R.id.subjectName);
-                addDataToArrayList(editText.getText().toString());
-            }
-        });
     }
     private void addDataToArrayList(String data){
         subjectarray.add(data);
