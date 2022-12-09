@@ -31,7 +31,7 @@
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="312dp"
         android:fontFamily="monospace"
-        android:text="The app will ask you to add attendance of each subject everyday in the evening. A notification reminder will be sent at night if you forget to add in the evening."
+        android:text="The app will ask you to add attendance of each subject everyday in the evening."
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,4 +52,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

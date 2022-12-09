@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,7 +65,12 @@ public class AddSubjects extends AppCompatActivity {
                 }
             }
         });
-
+        nextActBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                allInfoSavedActivity();
+            }
+        });
     }
     public void showCustomAlertDialog(){
         final AlertDialog.Builder alert=new AlertDialog.Builder(AddSubjects.this);
@@ -92,5 +98,10 @@ public class AddSubjects extends AppCompatActivity {
         System.out.println(subjectsAdded);
         subjectsCount.setText("Subjects added:"+subjectsAdded);
         subjectsView.setText("Subjects:"+newSubject+"\n");
+    }
+    public void allInfoSavedActivity(){
+        Intent intent=new Intent(this,AllSet.class);
+        intent.putExtra("subjectary",subjectarray);
+        startActivity(intent);
     }
 }
