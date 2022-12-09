@@ -30,6 +30,7 @@ public class AddSubjects extends AppCompatActivity {
         subsCount=getIntent().getStringExtra("subjectsCount");
         arraylistCapacity=Integer.parseInt(subsCount);
         subjectarray.ensureCapacity(arraylistCapacity);
+        System.out.println(arraylistCapacity);
 
         subjectsView=(TextView) findViewById(R.id.subjectsSpace);
         subjectsCount=(TextView) findViewById(R.id.subjectsCountSpace);
@@ -50,28 +51,35 @@ public class AddSubjects extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Cleared",Toast.LENGTH_LONG).show();
             }
         });
+        addNewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(subjectsAdded<arraylistCapacity){
+                    showCustomAlertDialog();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),"You have added all subjects",Toast.LENGTH_LONG).show();
+                    for(String name:subjectarray)
+                        System.out.println(name);
+                }
+            }
+        });
 
     }
-    public void showCustomAlertDialog(View view){  // WRONG CODE caused the issue. Work on this tmrw
-        if(subjectsAdded>arraylistCapacity){
-            Toast.makeText(getApplicationContext(),"You have added all subjects",Toast.LENGTH_LONG).show();
-        }
-        else{
-            final AlertDialog.Builder alert=new AlertDialog.Builder(AddSubjects.this);
-            View mview=getLayoutInflater().inflate(R.layout.custom_dialogbox,null);
-            final EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
-            alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    addDataToArrayList(txt_input.getText().toString());
-                }
-            });
-            alert.setView(mview);
-            final AlertDialog alertDialog=alert.create();
-            alertDialog.setCanceledOnTouchOutside(true);
-            alertDialog.show();
-        }
-
+    public void showCustomAlertDialog(){
+        final AlertDialog.Builder alert=new AlertDialog.Builder(AddSubjects.this);
+        View mview=getLayoutInflater().inflate(R.layout.custom_dialogbox,null);
+        final EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
+        alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                addDataToArrayList(txt_input.getText().toString());
+            }
+        });
+        alert.setView(mview);
+        final AlertDialog alertDialog=alert.create();
+        alertDialog.setCanceledOnTouchOutside(true);
+        alertDialog.show();
     }
     private void addDataToArrayList(String data){
         subjectarray.add(data);
@@ -81,6 +89,7 @@ public class AddSubjects extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),data+" has been added",Toast.LENGTH_LONG).show();
     }
     public void updateValues(){
+        System.out.println(subjectsAdded);
         subjectsCount.setText("Subjects added:"+subjectsAdded);
         subjectsView.setText("Subjects:"+newSubject+"\n");
     }
