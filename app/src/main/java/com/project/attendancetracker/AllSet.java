@@ -2,6 +2,7 @@ package com.project.attendancetracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,12 @@ public class AllSet extends AppCompatActivity {
                     System.out.println(cr.getString(1));
                     System.out.println(cr.getString(2));
                 }
+                goToMainPage();
             }
         });
+    }
+    public void goToMainPage(){
+        Intent intent=new Intent(this,SubjectsView.class);
+        startActivity(intent);
     }
 }
