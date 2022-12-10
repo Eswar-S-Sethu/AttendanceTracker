@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,20 +20,25 @@ public class AddSubjects extends AppCompatActivity {
     TextView subjectsView,subjectsCount;
     Button addNewBtn,clearAllBtn,nextActBtn;
     static ArrayList<String> subjectarray=new ArrayList<String>();
-    String subsCount;
+    String subsCount,uname;
     int arraylistCapacity=0;
     int subjectsAdded=0;
     String newSubject;
+    DatabaseHandler dbh=new DatabaseHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_subjects);
+
+        dbh.deleteAllAttendanceContent();
+
         subsCount=getIntent().getStringExtra("subjectsCount");
+        uname=getIntent().getStringExtra("username");
         arraylistCapacity=Integer.parseInt(subsCount);
+
         subjectarray.ensureCapacity(arraylistCapacity);
         System.out.println(arraylistCapacity);
-
         subjectsView=(TextView) findViewById(R.id.subjectsSpace);
         subjectsCount=(TextView) findViewById(R.id.subjectsCountSpace);
         addNewBtn=(Button) findViewById(R.id.addNewSub);
@@ -49,6 +55,7 @@ public class AddSubjects extends AppCompatActivity {
                 subjectsView.setText("Subjects:");
                 subjectsCount.setText("Subjects added:"+subjectsAdded);
                 subjectarray.clear();
+                dbh.deleteAllAttendanceContent();
                 Toast.makeText(getApplicationContext(),"Cleared",Toast.LENGTH_LONG).show();
             }
         });
@@ -78,8 +85,11 @@ public class AddSubjects extends AppCompatActivity {
         final EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
         alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+            public void onClick(DialogInterface dialogInterface, int i) {// make decisions
                 addDataToArrayList(txt_input.getText().toString());
+                String addtmp=txt_input.getText().toString();
+                System.out.println(addtmp);
+                dbh.addAttendanceData(addtmp,0,0);
             }
         });
         alert.setView(mview);
@@ -101,7 +111,6 @@ public class AddSubjects extends AppCompatActivity {
     }
     public void allInfoSavedActivity(){
         Intent intent=new Intent(this,AllSet.class);
-        intent.putExtra("subjectary",subjectarray);
         startActivity(intent);
     }
 }
