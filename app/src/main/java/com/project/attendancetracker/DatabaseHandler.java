@@ -15,7 +15,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String ATTENDANCE_TABLE="attendance";
     private static final String SUBJECTS_COL="Subjects";
     private static final String PRESENT_COL="PresentDays";
-    private static final String CLASSDAYS_COL="ClassDays";
+    private static final String ABSENTDAYS_COL="AbsentDays";
     private static final String TOTALDAYS_COL="TotalDays";
 
     public DatabaseHandler(Context context){
@@ -27,7 +27,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + ATTENDANCE_TABLE + " ("
                 + SUBJECTS_COL + " TEXT, "
                 + PRESENT_COL + " INTEGER,"
-                + CLASSDAYS_COL + " INTEGER,"
+                + ABSENTDAYS_COL + " INTEGER,"
                 + TOTALDAYS_COL + " INTEGER)";
         db.execSQL(query);
     }
@@ -36,7 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values=new ContentValues();
         values.put(SUBJECTS_COL,subject);
         values.put(PRESENT_COL,presentdays);
-        values.put(CLASSDAYS_COL,classdays);
+        values.put(ABSENTDAYS_COL,classdays);
         try{
             db.insert(ATTENDANCE_TABLE,null,values);
             System.out.println("values inserted");
@@ -68,7 +68,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues cv=new ContentValues();
 
         cv.put(PRESENT_COL,pr);
-        cv.put(CLASSDAYS_COL,cl);
+        cv.put(ABSENTDAYS_COL,cl);
         try{
             db.update(ATTENDANCE_TABLE,cv,"Subjects=?",new String[]{subjectName});
         }

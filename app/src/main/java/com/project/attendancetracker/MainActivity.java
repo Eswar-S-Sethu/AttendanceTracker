@@ -14,13 +14,14 @@ public class MainActivity extends AppCompatActivity {
     EditText nametxt,number_of_subjects;
     Button nextbtn;
     String subs,nm;
+    int noofSubs=0;
+    UserDataHandler usrdt=new UserDataHandler(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nametxt=findViewById(R.id.name);
-
 
         number_of_subjects=findViewById(R.id.noofsubs);
         nextbtn=findViewById(R.id.nextbtn);
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Add each subject",Toast.LENGTH_LONG).show();
                 nm=nametxt.getText().toString();
                 subs=number_of_subjects.getText().toString();
+                noofSubs=Integer.parseInt(subs);
+                usrdt.addUserData(nm,noofSubs,1);
                 showlistview();
             }
         });

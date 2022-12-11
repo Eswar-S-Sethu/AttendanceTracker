@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 public class ShowSummaryActivity extends AppCompatActivity {
 
+    DatabaseHandler dbh=new DatabaseHandler(this);
+    UserDataHandler usr=new UserDataHandler(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
