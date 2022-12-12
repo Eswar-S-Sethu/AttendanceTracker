@@ -7,23 +7,14 @@
     tools:context=".SubjectsView">
 
     <ListView
-        android:layout_width="413dp"
-        android:layout_height="522dp"
-        android:layout_marginBottom="209dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="115dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="599dp"
-        android:layout_marginEnd="237dp"
-        android:layout_marginBottom="76dp"
-        android:text="Summary"
+        android:id="@+id/subjectsListVW"
+        android:layout_width="338dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="120dp"
+        android:dividerHeight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,13 +22,27 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="171dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="227dp"
-        android:layout_marginTop="598dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="76dp"
+        android:layout_width="174dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="633dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="monospace"
         android:text="Delete all data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="338dp"
+        android:layout_height="310dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="386dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

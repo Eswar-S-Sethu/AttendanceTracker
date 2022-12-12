@@ -4,47 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".popper">
+    tools:context=".Popper">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="414dp"
-        android:layout_height="111dp"
-        android:layout_marginBottom="620dp"
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="125dp"
+        android:layout_height="56dp"
+        android:fontFamily="monospace"
+        android:text="Present"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="237dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="602dp"
+        android:fontFamily="monospace"
+        android:text="SUBJECT"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="234dp"
-            android:layout_height="31dp"
-            android:text="SUBJECT"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="16dp" />
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="129dp"
+        android:layout_height="56dp"
+        android:fontFamily="monospace"
+        android:text="absent"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="181dp" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="67dp"
-            android:layout_height="43dp"
-            android:text="P"
-            tools:layout_editor_absoluteX="47dp"
-            tools:layout_editor_absoluteY="52dp" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="601dp"
+        android:fontFamily="monospace"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="61dp"
-            android:layout_height="60dp"
-            android:text="XX %"
-            tools:layout_editor_absoluteX="318dp"
-            tools:layout_editor_absoluteY="27dp" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="66dp"
-            android:layout_height="45dp"
-            android:text="A"
-            tools:layout_editor_absoluteX="128dp"
-            tools:layout_editor_absoluteY="52dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

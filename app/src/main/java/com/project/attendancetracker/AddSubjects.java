@@ -107,7 +107,7 @@ public class AddSubjects extends AppCompatActivity {
     public void updateValues(){
         System.out.println(subjectsAdded);
         subjectsCount.setText("Subjects added:"+subjectsAdded);
-        subjectsView.setText("Subjects:"+newSubject+"\n");
+        subjectsView.append(newSubject+"\n");
     }
     public void allInfoSavedActivity(){
         Intent intent=new Intent(this,AllSet.class);

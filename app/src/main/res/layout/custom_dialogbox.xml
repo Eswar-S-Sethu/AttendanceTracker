@@ -5,8 +5,9 @@
 
     <EditText
         android:id="@+id/subjectName"
-        android:hint="Subject Name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:hint="Subject Name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

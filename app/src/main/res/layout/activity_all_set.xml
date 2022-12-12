@@ -40,12 +40,13 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="103dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="154dp"
+        android:layout_width="121dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="145dp"
         android:layout_marginTop="552dp"
-        android:layout_marginEnd="154dp"
-        android:layout_marginBottom="119dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="108dp"
+        android:fontFamily="monospace"
         android:text="Got it"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
