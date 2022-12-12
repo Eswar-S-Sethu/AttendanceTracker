@@ -12,11 +12,19 @@ public class ControlClass extends AppCompatActivity {
      * activity must be displayed.*/
     UserDataHandler usr=new UserDataHandler(this);
     private int firstTime=0;
+    private int secs=3;
     @Override
     protected void onCreate(Bundle savedInstance){
         super.onCreate(savedInstance);
         setContentView(R.layout.splashscreen);
-        checkFirstTime();
+        getSupportActionBar().hide();
+        Utils.delay(secs, new Utils.DelayCallback() {
+            @Override
+            public void afterDelay() {
+                checkFirstTime();
+
+            }
+        });
     }
 
 
@@ -34,3 +42,4 @@ public class ControlClass extends AppCompatActivity {
         }
     }
 }
+
