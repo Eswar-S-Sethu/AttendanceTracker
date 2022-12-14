@@ -80,9 +80,9 @@ public class AddSubjects extends AppCompatActivity {
         });
     }
     public void showCustomAlertDialog(){
-        final AlertDialog.Builder alert=new AlertDialog.Builder(AddSubjects.this);
+        AlertDialog.Builder alert=new AlertDialog.Builder(this);
         View mview=getLayoutInflater().inflate(R.layout.custom_dialogbox,null);
-        final EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
+        EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
         alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {// make decisions
@@ -93,7 +93,7 @@ public class AddSubjects extends AppCompatActivity {
             }
         });
         alert.setView(mview);
-        final AlertDialog alertDialog=alert.create();
+        AlertDialog alertDialog=alert.create();
         alertDialog.setCanceledOnTouchOutside(true);
         alertDialog.show();
     }

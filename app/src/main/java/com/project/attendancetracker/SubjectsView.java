@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,15 +24,14 @@ import java.util.List;
 
 public class SubjectsView extends AppCompatActivity {
 
-    Button smryBtn,deleteAllbtn;
     DatabaseHandler dbh=new DatabaseHandler(this);
     UserDataHandler usr=new UserDataHandler(this);
+    WelcomeMessage wm=new WelcomeMessage();
     ListView lst;
     ArrayList<String> subjectsList=new ArrayList<String>();
     String selectedItem;
     int capacity=0,Intperct;
     double pday=0,aday=0,perct;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,15 +58,20 @@ public class SubjectsView extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        // inflate the menu
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
         AlertDialog.Builder dialog=new AlertDialog.Builder(this);
-
-        deleteAllbtn=(Button) findViewById(R.id.button2);
-
-
-        deleteAllbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.setMessage("This will delete all data including the userdata saved in this device.");
+        int id=item.getItemId();
+        switch (id){
+            case R.id.deleteAllItem:
+                dialog.setMessage("This will delete all data including the userdata saved in this device.The app will restart");
                 dialog.setCancelable(false);
                 dialog.setPositiveButton("Go for it", new DialogInterface.OnClickListener() {
                     @Override
@@ -86,8 +91,18 @@ public class SubjectsView extends AppCompatActivity {
                 AlertDialog alert=dialog.create();
                 alert.setTitle("Delete data?");
                 alert.show();
-            }
-        });
+                break;
+            case R.id.attendanceRep:
+                Toast.makeText(getApplicationContext(),"Working on it",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.setup:
+                Toast.makeText(getApplicationContext(),"working on the settings",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.abt:
+                Toast.makeText(getApplicationContext(),"working on about activity",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return true;
     }
 
     public void cleanHouse(){

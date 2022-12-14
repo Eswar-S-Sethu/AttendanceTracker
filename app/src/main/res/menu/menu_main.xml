@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/attendanceRep"
+        android:title="Attendance Report" />
+    <item
+        android:id="@+id/deleteAllItem"
+        android:title="Delete All Data" />
+    <item
+        android:id="@+id/setup"
+        android:title="Settings" />
+    <item
+        android:id="@+id/abt"
+        android:title="About" />
+</menu>

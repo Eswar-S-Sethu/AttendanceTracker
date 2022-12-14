@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AttendanceTracker</string>
+    <string name="app_name">Attendance Tracker</string>
     <string name="title_activity_main_app_view">MainAppView</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
