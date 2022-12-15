@@ -94,11 +94,16 @@ public class AddSubjects extends AppCompatActivity {
         EditText txt_input=(EditText) mview.findViewById(R.id.subjectName);
         alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {// make decisions
-                addDataToArrayList(txt_input.getText().toString());
-                String addtmp=txt_input.getText().toString();
-                System.out.println(addtmp);
-                dbh.addAttendanceData(addtmp,0,0);
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if(txt_input.getText().toString().length()==0){
+                    Toast.makeText(getApplicationContext(),"add subject name",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    addDataToArrayList(txt_input.getText().toString());
+                    String addtmp=txt_input.getText().toString();
+                    System.out.println(addtmp);
+                    dbh.addAttendanceData(addtmp,0,0);
+                }
             }
         });
         alert.setView(mview);

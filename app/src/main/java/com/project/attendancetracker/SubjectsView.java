@@ -76,7 +76,7 @@ public class SubjectsView extends AppCompatActivity {
         int id=item.getItemId();
         switch (id){
             case R.id.deleteAllItem:
-                dialog.setMessage("This will delete all data including the userdata saved in this device.The app will restart");
+                dialog.setMessage("This will delete all data including the userdata saved in this device.The app will restart.");
                 dialog.setCancelable(false);
                 dialog.setPositiveButton("Go for it", new DialogInterface.OnClickListener() {
                     @Override

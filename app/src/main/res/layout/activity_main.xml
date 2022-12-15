@@ -15,7 +15,7 @@
         android:layout_marginEnd="29dp"
         android:layout_marginBottom="454dp"
         android:fontFamily="@font/gothamrounded_bold"
-        android:text="Hello there,before we move on we need to set up a bit"
+        android:text="Hi there,before we move on we need to set up a bit"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

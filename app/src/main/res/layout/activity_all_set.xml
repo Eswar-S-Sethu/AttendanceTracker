@@ -31,7 +31,7 @@
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="312dp"
         android:fontFamily="@font/gothamrounded_book"
-        android:text="The app will ask you to add attendance of each subject everyday in the evening."
+        android:text="Add your attendance everyday. You can turn on reminder notifications for a pre-defined time or a custom time if that's what you prefer."
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -32,7 +32,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="468dp"
         android:fontFamily="@font/gothamrounded_book"
-        android:text="Created by Eswar S Sethu and Aditya Varma as a part of a college project, this app is designed to simplify the task of tracking attendance"
+        android:text="Created by Eswar S Sethu and Aditya Varma as a part of a college project, this app is designed to simplify the task of tracking attendance. Thank you for using our app :)"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

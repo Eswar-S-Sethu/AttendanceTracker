@@ -43,9 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 else if(nm.length()==0){
                     Toast.makeText(getApplicationContext(),"fill in all fields",Toast.LENGTH_SHORT).show();
                 }
+                else if(nm.length()!=0 && Integer.parseInt(subs)<0){
+                    Toast.makeText(getApplicationContext(),"stop playing  :|",Toast.LENGTH_SHORT).show();
+                }
                 else {
                     noofSubs=Integer.parseInt(subs);
-                    Toast.makeText(getApplicationContext(),"Add each subject",Toast.LENGTH_LONG).show();
                     usrdt.addUserData(nm,noofSubs,1);
                     showlistview();
                 }

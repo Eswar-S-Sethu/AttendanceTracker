@@ -7,8 +7,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.material.badge.BadgeUtils;
+import com.google.android.material.snackbar.Snackbar;
 
 public class Popper extends AppCompatActivity {
 
@@ -18,6 +21,7 @@ public class Popper extends AppCompatActivity {
     String subject;
     double pres=0,abs=0,percent=0,att=0,abd=0,presentDys=0,absentDys=0,initial_percent=0;
     int rd=0,roundOf=0;
+    ConstraintLayout constraintLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -28,6 +32,8 @@ public class Popper extends AppCompatActivity {
         percvw=(TextView) findViewById(R.id.textView4);
         presentbtn=(Button) findViewById(R.id.button6);
         absentbtn=(Button) findViewById(R.id.button7);
+        constraintLayout=(ConstraintLayout) findViewById(R.id.popper_layout);
+
 
         subject=getIntent().getStringExtra("selected");
         System.out.println(subject);
@@ -63,6 +69,8 @@ public class Popper extends AppCompatActivity {
                 percent=pres/(pres+abs)*100;
                 rd=(int) percent;
                 percvw.setText(rd+" %");
+               Snackbar snackbar=Snackbar.make(constraintLayout,"Attendance added",Snackbar.LENGTH_LONG);
+               snackbar.show();
             }
         });
         absentbtn.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +93,8 @@ public class Popper extends AppCompatActivity {
                 rd=(int) percent;
                 System.out.println(percent);
                 percvw.setText(rd+" %");
+                Snackbar snackbar=Snackbar.make(constraintLayout,"Attendance added",Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         });
     }
