@@ -9,7 +9,7 @@
         android:id="@+id/subjectName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="monospace"
+        android:fontFamily="@font/gothamrounded_book"
         android:hint="Subject name"
         tools:layout_editor_absoluteY="173dp" />
 

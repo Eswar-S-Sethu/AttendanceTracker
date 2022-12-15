@@ -37,5 +37,6 @@ public class AllSet extends AppCompatActivity {
     public void goToMainPage(){
         Intent intent=new Intent(this,SubjectsView.class);
         startActivity(intent);
+        this.finish();
     }
 }

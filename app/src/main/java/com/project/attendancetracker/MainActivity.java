@@ -28,12 +28,26 @@ public class MainActivity extends AppCompatActivity {
         nextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Add each subject",Toast.LENGTH_LONG).show();
                 nm=nametxt.getText().toString();
                 subs=number_of_subjects.getText().toString();
-                noofSubs=Integer.parseInt(subs);
-                usrdt.addUserData(nm,noofSubs,1);
-                showlistview();
+                if(nm.length()==0 && subs.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"fill in all fields",Toast.LENGTH_SHORT).show();
+                }
+                else if(nm.length()!=0 && subs.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"fill in all fields",Toast.LENGTH_SHORT).show();
+                }
+                else if(nm.length()!=0 && Integer.parseInt(subs)==0){
+                    Toast.makeText(getApplicationContext(),"stop playing  :|",Toast.LENGTH_SHORT).show();
+                }
+                else if(nm.length()==0){
+                    Toast.makeText(getApplicationContext(),"fill in all fields",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    noofSubs=Integer.parseInt(subs);
+                    Toast.makeText(getApplicationContext(),"Add each subject",Toast.LENGTH_LONG).show();
+                    usrdt.addUserData(nm,noofSubs,1);
+                    showlistview();
+                }
             }
         });
     }
@@ -43,5 +57,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("subjectsCount",subs);
         intent.putExtra("username",nm);
         startActivity(intent);
+        this.finish();
     }
 }

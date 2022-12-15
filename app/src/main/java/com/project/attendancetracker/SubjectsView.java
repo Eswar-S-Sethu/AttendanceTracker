@@ -21,14 +21,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class SubjectsView extends AppCompatActivity {
 
     DatabaseHandler dbh=new DatabaseHandler(this);
     UserDataHandler usr=new UserDataHandler(this);
+    TextView nametxt,greetingTxt;
     WelcomeMessage wm=new WelcomeMessage();
     ListView lst;
     ArrayList<String> subjectsList=new ArrayList<String>();
+    String getusrnm,usrnmfix;
     String selectedItem;
     int capacity=0,Intperct;
     double pday=0,aday=0,perct;
@@ -38,6 +41,12 @@ public class SubjectsView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects_view);
         lst=(ListView) findViewById(R.id.subjectsListVW);
+        nametxt=(TextView) findViewById(R.id.textView5);
+        greetingTxt=(TextView) findViewById(R.id.textView2);
+        greetingTxt.setText(wm.getGreeting());
+        usrnmfix=usr.getUserName().toLowerCase();
+        getusrnm=usr.getUserName().substring(0,1).toUpperCase()+usrnmfix.substring(1);
+        nametxt.setText(getusrnm);
         capacity=usr.getSubjectCount();
         System.out.println(capacity);
         subjectsList.ensureCapacity(capacity);
@@ -50,10 +59,6 @@ public class SubjectsView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedItem=(String) parent.getItemAtPosition(position);
                 System.out.println(selectedItem);
-                pday=dbh.getPresentDays(selectedItem);
-                aday=dbh.getAbsentDays(selectedItem);
-                perct=pday/(pday+aday)*100;
-                Intperct=(int) perct;
                 goToDetails();
             }
         });
@@ -92,14 +97,9 @@ public class SubjectsView extends AppCompatActivity {
                 alert.setTitle("Delete data?");
                 alert.show();
                 break;
-            case R.id.attendanceRep:
-                Toast.makeText(getApplicationContext(),"Working on it",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.setup:
-                Toast.makeText(getApplicationContext(),"working on the settings",Toast.LENGTH_SHORT).show();
-                break;
             case R.id.abt:
-                Toast.makeText(getApplicationContext(),"working on about activity",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(this,AboutUs.class);
+                startActivity(intent);
                 break;
         }
         return true;
@@ -112,11 +112,11 @@ public class SubjectsView extends AppCompatActivity {
     public void fromTheBeginning(){
         Intent intent=new Intent(this,ControlClass.class);
         startActivity(intent);
+        this.finish();
     }
     public void goToDetails(){
         Intent intent=new Intent(this,Popper.class);
         intent.putExtra("selected",selectedItem);
-        intent.putExtra("percentage",perct);
         startActivity(intent);
     }
 }

@@ -115,4 +115,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return getSubjects;
     }
+    public boolean checkTable(){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String count="select count(subjects) from attendance";
+        Cursor mcursor=db.rawQuery(count,null);
+        mcursor.moveToFirst();
+        int icount=mcursor.getInt(0);
+        if(icount>0)
+            return false;
+        else
+            return true;
+    }
 }

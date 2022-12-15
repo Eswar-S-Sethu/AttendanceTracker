@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,15 +46,17 @@ public class AddSubjects extends AppCompatActivity {
         clearAllBtn=(Button) findViewById(R.id.allClearBtn);
         nextActBtn=(Button) findViewById(R.id.nextBtn);
 
+        subjectsView.setMovementMethod(new ScrollingMovementMethod());
+
         subjectsView.setText("Subjects:");
-        subjectsCount.setText("Subjects added:"+subjectsAdded);
+        subjectsCount.setText("Subjects added:"+subjectsAdded+"/"+arraylistCapacity);
 
         clearAllBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 subjectsAdded=0;
                 subjectsView.setText("Subjects:");
-                subjectsCount.setText("Subjects added:"+subjectsAdded);
+                subjectsCount.setText("Subjects added:"+subjectsAdded+"/"+arraylistCapacity);
                 subjectarray.clear();
                 dbh.deleteAllAttendanceContent();
                 Toast.makeText(getApplicationContext(),"Cleared",Toast.LENGTH_LONG).show();
@@ -75,7 +78,12 @@ public class AddSubjects extends AppCompatActivity {
         nextActBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                allInfoSavedActivity();
+                if(subjectarray.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"type in all the subjects",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    allInfoSavedActivity();
+                }
             }
         });
     }
@@ -102,15 +110,15 @@ public class AddSubjects extends AppCompatActivity {
         subjectsAdded=subjectsAdded+1;
         newSubject=data;
         updateValues();
-        Toast.makeText(getApplicationContext(),data+" has been added",Toast.LENGTH_LONG).show();
     }
     public void updateValues(){
         System.out.println(subjectsAdded);
-        subjectsCount.setText("Subjects added:"+subjectsAdded);
+        subjectsCount.setText("Subjects added:"+subjectsAdded+"/"+arraylistCapacity);
         subjectsView.append(newSubject+"\n");
     }
     public void allInfoSavedActivity(){
         Intent intent=new Intent(this,AllSet.class);
         startActivity(intent);
+        this.finish();
     }
 }

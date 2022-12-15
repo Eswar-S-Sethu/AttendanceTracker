@@ -16,8 +16,8 @@ public class Popper extends AppCompatActivity {
     Button presentbtn,absentbtn;
     DatabaseHandler dbh=new DatabaseHandler(this);
     String subject,pernum;
-    double pres=0,abs=0,percent=0,att=0,abd=0;
-    int rd=0,initial_percent=0;
+    double pres=0,abs=0,percent=0,att=0,abd=0,presentDys=0,absentDys=0,initial_percent=0;
+    int rd=0,roundOf=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -29,14 +29,20 @@ public class Popper extends AppCompatActivity {
         presentbtn=(Button) findViewById(R.id.button6);
         absentbtn=(Button) findViewById(R.id.button7);
 
-        //pernum=getIntent().getStringExtra("percentage");
-        //initial_percent=Integer.parseInt(pernum);
-
         subject=getIntent().getStringExtra("selected");
         System.out.println(subject);
 
+        /**
+         * Implementing the functionality to display the current percentage
+         * which was not present before. */
+        presentDys=dbh.getPresentDays(subject);
+        absentDys= dbh.getAbsentDays(subject);
+        initial_percent=presentDys/(presentDys+absentDys)*100;
+        roundOf=(int) initial_percent;
+
+
         subjectvw.setText(subject);
-        percvw.setText(initial_percent+" %");
+        percvw.setText(roundOf+" %");
 
         presentbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +63,6 @@ public class Popper extends AppCompatActivity {
                 percent=pres/(pres+abs)*100;
                 rd=(int) percent;
                 percvw.setText(rd+" %");
-                Toast.makeText(getApplicationContext(),"added",Toast.LENGTH_SHORT).show();
             }
         });
         absentbtn.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +85,6 @@ public class Popper extends AppCompatActivity {
                 rd=(int) percent;
                 System.out.println(percent);
                 percvw.setText(rd+" %");
-                Toast.makeText(getApplicationContext(),"added",Toast.LENGTH_SHORT).show();
             }
         });
     }

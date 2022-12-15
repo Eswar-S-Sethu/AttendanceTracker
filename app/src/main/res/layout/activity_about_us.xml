@@ -4,43 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#6C5B5B"
     tools:context=".AboutUs">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="259dp"
         android:layout_height="47dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="649dp"
         android:text="About"
+        android:fontFamily="@font/gothamrounded_bold"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="373dp"
-        android:layout_height="199dp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="112dp">
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="378dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="468dp"
+        android:fontFamily="@font/gothamrounded_book"
+        android:text="Created by Eswar S Sethu and Aditya Varma as a part of a college project, this app is designed to simplify the task of tracking attendance"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="107dp"
         android:layout_height="24dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="657dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginBottom="50dp"
         android:text="EchoSierra"
         android:textAlignment="center"
         android:textSize="12sp"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="657dp" />
+        android:fontFamily="@font/gothamrounded_book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
