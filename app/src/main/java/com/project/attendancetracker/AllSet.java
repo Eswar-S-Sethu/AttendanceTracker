@@ -18,6 +18,7 @@ public class AllSet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_set);
+        getSupportActionBar().hide();
 
         gotItBtn=(Button) findViewById(R.id.button5);
 

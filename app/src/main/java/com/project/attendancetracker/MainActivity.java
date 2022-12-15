@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         nametxt=findViewById(R.id.name);
+        getSupportActionBar().hide();
 
         number_of_subjects=findViewById(R.id.noofsubs);
         nextbtn=findViewById(R.id.nextbtn);

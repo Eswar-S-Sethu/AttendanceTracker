@@ -82,7 +82,6 @@ public class SubjectsView extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         cleanHouse();
-                        Toast.makeText(getApplicationContext(),"All done", Toast.LENGTH_SHORT).show();
                         fromTheBeginning();
                     }
                 });
@@ -90,7 +89,6 @@ public class SubjectsView extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();
-                        Toast.makeText(getApplicationContext(), "Operation cancelled", Toast.LENGTH_SHORT).show();
                     }
                 });
                 AlertDialog alert=dialog.create();

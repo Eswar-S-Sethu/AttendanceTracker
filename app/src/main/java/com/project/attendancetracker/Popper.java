@@ -15,7 +15,7 @@ public class Popper extends AppCompatActivity {
     TextView subjectvw,percvw;
     Button presentbtn,absentbtn;
     DatabaseHandler dbh=new DatabaseHandler(this);
-    String subject,pernum;
+    String subject;
     double pres=0,abs=0,percent=0,att=0,abd=0,presentDys=0,absentDys=0,initial_percent=0;
     int rd=0,roundOf=0;
 
